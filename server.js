@@ -1,19 +1,16 @@
 "use strict";
 
 const express = require("express");
+require("dotenv").config();
 const superagent = require("superagent");
 
-const PORT = 4000;
-// require("dotenv").config();
+const PORT = process.env.PORT;
+
 
 
 const app = express();
 
-// const PORT = process.env.PORT;
 
-
-
-// const superagent = require("superagent");
 
 
 
@@ -40,14 +37,14 @@ app.get("/alldigimon",(req,res) =>{
 })
 
 
-// class Digimon{
-//     constructor(characters){
-//         this.name = characters.name;
-//         this.image= characters.image;
-//         this.level= characters.level;
+class Digimon{
+    constructor(digi){
+        this.name = digi.name;
+        this.image= digi.image;
+        this.level= digi.level;
 
-//     }
-// }
+    }
+}
 
 
 app.get("/ultimatedigimon",(req, res)=>{
@@ -67,6 +64,14 @@ app.get("/ultimatedigimon",(req, res)=>{
 });
 
 
+class UltimateDigimon{
+    constructor(data){
+        this.name = data.name;
+        this.image = data.image;
+        this.level= digi.level;
+
+    }
+}
 
 
 
